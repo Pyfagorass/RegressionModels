@@ -39,11 +39,9 @@ one of the independent variables is varied, while the other independent variable
 
     $$Y \approx f (\mathbf {X}, \beta)$$
 
-<p>
-  This page seeks to document the standard models. It not about the methods used to fit models.
-</p>
+<p>This page seeks to document the standard models. It not about regression techniques in general, though notes can be given for non-standard models on methods used to fit the curve.</p>
 
-<h1>Linear Regression</h1>
+<h1>Linear Models</h1>
 
 <p>The standard linear model is</p>
 
@@ -51,5 +49,64 @@ $$ y = \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n + \epsilon $$
 
 <p>Generally, a polynomial model can be thought of as linear, with the transformation $x_1 = t^1$, $x_2 = t^2$, etc. </p>
 
-  </body>
+<h1>Nonlinear Models</h1>
+
+<h2>The Asymptotic Regression Model</h2>
+
+<p>The asymptotic regression model is used to model a response $y$ that approaches a horzontal asymptotes as $x \to \infty$. We write it as</p>
+
+$$y = \beta_1 + (\beta_2 - \beta_1) e^{-e^{\beta_3} x}$$
+
+<p>so that $\beta_1$ is the asymptote as $x \to \infty$ and $\beta_2$ is $y(0)$. The parameter $\beta_3$ is the logarithm of the rate constant. We use the logarithm to enforce positivty of the rate constant so the model does approach an asymptote. The corresponding half-life is $t_{0.5} = \log 2/\mathrm{exp(\beta_3)}$</p>
+
+<p>Taken from <b>Mixed-Effects Models in S and S-PLUS</b>, <em>J. C. Pinheiro, et al</em>.</p>
+
+<h2>Asymptotic Regression with an Offset</h2>
+
+<p>This is an alternative form of the asymptotic regression model. It is written as</p>
+
+$$ y = \beta_1 \left( 1 - e^{-e^{\beta_2}(x-\beta_3)} \right) $$
+
+<p>As in the asymptotic regression model above, $\beta_1$ is the asymptote as $x \to \infty$. In this formulation $\beta_2$ is the logarithm of the rate constant, corresponding to a half-life of $t_{0.5} = \log 2/ \mathrm{exp}(\beta_2)$, and $\beta_3$ is the value of $x$ at which $y=0$.</p>
+
+<p>Taken from <b>Mixed-Effects Models in S and S-PLUS</b>, <em>J. C. Pinheiro, et al</em>.</p>
+
+<h2>Asymptotic Regression Through the Origin</h2>
+
+<p>This form of the asympototic regresion model is constrained to pass through the origin. It is called the BOD model in Bates and Watts (1998) where it is used to model Biochemical Oxygen Deman curves. The model is written</p>
+
+$$ y = \beta_1 \left(1-e^{-e^{\beta_2} x}\right) $$
+
+<p>The asymptote as $x \to \infty$ us $\beta_1$ and $\beta_2$ is the logarithm of the rate constant, corresponding to a half-life of $t_{0.5} = \log 2/ \mathrm{exp}(\beta_2)$.</p>
+
+<p>Taken from <b>Mixed-Effects Models in S and S-PLUS</b>, <em>J. C. Pinheiro, et al</em>.</p>
+
+<h2>Biexponetial Model</h2>
+
+<p>The biexponential model is a linear combination of two negative exponential terms</p>
+
+$$y = \beta_1 e^{-e^{\beta_2}x} + \beta_3 e^{-e^{\beta_4}x}$$
+
+<p>The paramters $\beta_1$ and $\beta_3$ are the coefficients of the linear combination, and the parameters $\beta_2$ and $\beta_4$ are the logarithms of the rate constants. The two sets of parameters $(\beta_1, \beta_2)$ and $(\beta_3, \beta_4)$ are <em>exchangeable</em>, meaning that the values of the pairs can be exchanged without changing the value of $y$. We create an identifiable parameterization by requiring that $\beta_2 > \beta_4$.</p>
+
+<p>Taken from <b>Mixed-Effects Models in S and S-PLUS</b>, <em>J. C. Pinheiro, et al</em>.</p>
+
+<h2>First-Order Compartment Model</h2>
+
+<p>This model is derived from a compartment model in pharmacokinetics describing the concetration of a drug in the serum following a single oral dose. The model is based on first-order kinetics for the absorption of the drug from the digestive system. Because the drug is eliminated from the circulatory system, the system of compartments is called an open system and the model is a first-order open compartment model. It is written</p>
+
+$$y = \dfrac{D e^{\beta_1} e^{\beta_2}}{e^{\beta_3}\left(e^{\beta_2} - e^{\beta_1}\right)} \left( e^{-e^{\beta_1} x} - e^{-e^{\beta_2}x} \right) $$
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
 </html>
