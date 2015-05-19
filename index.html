@@ -48,18 +48,44 @@ $$ y = \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n + \epsilon $$
 
 <h1>Nonlinear Models</h1>
 
-<h2>Simple Nonlinear Models</h2>
+<h3>Simple Nonlinear Models</h3>
 
 <table style="width:100%">
   <tr>
-    <td>$y = \dfrac{1}{\beta_0 + \beta_1 x}$ or $\dfrac{1}{y} = \beta_0 + \beta_1 x$</td>
+    <td>$y = \dfrac{1}{\beta_0 + \beta_1 x}$ <b>or</b> $\dfrac{1}{y} = \beta_0 + \beta_1 x$</td>
     <td>Hyperbola</td>
   </tr>
   <tr>
-    <td>$y=\beta_0 \cdot \beta_2^x$ or $\log y = \log\beta_0 + (\log\beta_1) x$</td>
-    <td>Jackson</td>
+    <td>$y=\beta_1 \cdot \beta_2^x$ <b>or</b> $\log y = \log\beta_1 + (\log\beta_2) x$</td>
+    <td>Exponential Curve</td>
+  </tr>
+  <tr>
+    <td>$y=\beta_1 \cdot x^{\beta_2}$ <b>or</b> $\log y = \log\beta_1 + \beta_2 \log x$</td>
+    <td>Geometric Curve</td>
+  </tr>
+  <tr>
+    <td>$y=\beta_1 \cdot \beta_2^x + \beta_3$</td>
+    <td>Modified Exponential Curve</td>
+  </tr>
+  <tr>
+    <td>$y=\beta_1 \cdot x^{\beta_2} + \beta_3$</td>
+    <td>Modified Geometric Curve</td>
+  </tr>
+  <tr>
+    <td>$y=\beta_1 \cdot \beta_2^{\beta_3 x}$</td>
+    <td>Gompertz Curve</td>
+  </tr>
+  <tr>
+    <td>$y=\beta_1 \cdot \beta_2^{\beta_3 x} + \beta_4$</td>
+    <td>Modified Gompertz Curve</td>
+  </tr>
+  <tr>
+    <td>$y=\dfrac{1}{beta_1 \cdot \beta_2^{x} + \beta_3$</td>
+    <td>Logistic Curve</td>
   </tr>
 </table>
+
+<p>Taken from <b>Theory and Problems of Statistics</b>, <em>Murray R. Spiegel</em>.</p>
 
 <h2>The Asymptotic Regression Model</h2>
 
