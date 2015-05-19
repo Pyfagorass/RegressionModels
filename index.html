@@ -87,6 +87,44 @@ $$ y = \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n + \epsilon $$
 
 <p>Taken from <b>Theory and Problems of Statistics</b>, <em>Murray R. Spiegel</em>.</p>
 
+<h2>Hyperbolic Type Models</h2>
+
+<p>The following functions have been considered in modeling the relationship between crop yield $y$ and the spacing between rows of plants, concentration $y$ of a druge in the bloodstream and time $x$ after the drug is injected when the this concentration is measured, the rate $y$ of a chemical reaction and the amout $x$ of catalyst used, and many other relationships. These functions are</p>
+
+$$y = \dfrac{1}{\beta_1 + \beta_2 x)^{\beta_3}}$$
+
+$$y = \dfrac{1}{\beta_1 + \beta_2 x + \beta_2 x^2}$$
+
+$$y = \dfrac{1}{\beta_1 + \beta_2 x^{\beta_3}}$$
+
+<p>Taken from <b>Regression Analysis</b>, <em>Franklin A. Graybill, et al</em>.</p>
+
+<h2>Sigmoid Curves</h2>
+
+<p>S-shaped curves, often referred to as sigmoidal curves, arise in various applications, including bioassay, signal detection theory, engineering, and economics. Various types of growth data often conform to sigmoidal curves. Some of the nonlinear regression functions that have been used in such situations include</p>
+
+<p>Gompertz Model,</p>
+$$y = \beta_1 e^{-e^{(\beta_2 + \beta_3 x)}}$$
+
+
+<p>Logistic Regression Model,</p>
+$$y = \dfrac{1}{1+e^{-(\beta_2 + \beta_3 x)}}$$
+
+<p>and, Richard's Model,</p>
+$$y = \dfrac{1}{\left[1+e^{-(\beta_2 + \beta_3 x)} \right]^{\beta_4}}$$
+
+<p>Taken from <b>Regression Analysis</b>, <em>Franklin A. Graybill, et al</em>.</p>
+
+<h2>Asymptotic Models</h2>
+
+<p>When the response variable $y$ steadily increased (decreases) with the independent variable $x$ but the magnitude of the <em>rate of increase (decrease)</em> becomes smaller and smaller, with the response variable ultimately approaching a constant value called the <em>asymptote</em>, the family of curves defined by</p>
+
+$$y = \beta_1 + \beta_2 e^{-\beta_3 x}$$
+
+<p>has been found to provide useful nonlinear regression models. Typical applications where such models are useful include the study of yield as a function of rate of application fertilizer, mortaility rate as a function of time, amount of chemical converted in a reaction as a function of time, etc.</p>
+
+<p>Taken from <b>Regression Analysis</b>, <em>Franklin A. Graybill, et al</em>.</p>
+
 <h2>The Asymptotic Regression Model</h2>
 
 <p>The asymptotic regression model is used to model a response $y$ that approaches a horzontal asymptotes as $x \to \infty$. We write it as</p>
